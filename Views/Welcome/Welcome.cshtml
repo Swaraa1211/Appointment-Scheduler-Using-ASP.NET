@@ -9,8 +9,64 @@
 </head>*@
 @*<h1>Welcome</h1>*@
 
+<head>
+    <style>
+        .welcome-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url('/images/istockphoto-1394594963-170667a.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-color: #FFFE90;
+            height: 70vh;
+            color: #00FF91;
+            overflow: hidden;
+        }
+        .welcome-subtitle {
+            font-size: 24px;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        h1{
+            font-size: 40Px;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+            text-align: center;
+            animation: fade-in 1s ease;
+        }
+
+        keyframes fade-in {
+            from{
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+
+        }
+        keyframes slide-up {
+            from{
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        }
+
+        
+    </style>
+</head>
+
 <body>
     <div class="welcome-container">
-        <h1>Welcome to My Website</h1>
+        <h1>Appointment Scheduler!</h1>
+        <p class="welcome-subtitle"><b>Schedule The Appointment</b></p>
     </div>
 </body>

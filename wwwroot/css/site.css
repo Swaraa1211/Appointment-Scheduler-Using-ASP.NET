@@ -36,7 +36,7 @@ body {
     color: #6c757d; 
 }
 
-.container {
+.container-login-register {
     display: flex;
     justify-content: center;
     align-items: center;

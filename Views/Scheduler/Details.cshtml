@@ -4,11 +4,30 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <style>
+        .my-button {
+            background-color: #0F52BA; /* set background color */
+            color: #fff; /* set text color */
+            font-size: 16px; /* set font size */
+            padding: 3px 5px;
+            margin: 3px; /* set margin (top, right, bottom, left) */
+            border: 3px solid #000000; /* remove border */
+            border-radius: 5px; /* add border radius */
+            cursor: pointer; /* add cursor pointer on hover */
+        }
 
-<h1>Details</h1>
+            .my-button:hover {
+                background-color: #3399FF; /* change background color on hover */
+            }
+
+
+    </style>
+</head>
+<h2>Details</h2>
 
 <div>
-    <h4>SchedulerModel</h4>
+    <h6>Your Appointment !</h6>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -44,6 +63,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.AppointmentId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.AppointmentId"><button class="my-button" type="submit">Edit</button></a> |
+    <a asp-action="Index"><button class="my-button" type="submit">Back</button></a>
 </div>

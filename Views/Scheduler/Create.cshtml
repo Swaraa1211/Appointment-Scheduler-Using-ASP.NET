@@ -4,10 +4,29 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <style>
+        .my-button {
+            background-color: #0F52BA; /* set background color */
+            color: #fff; /* set text color */
+            font-size: 16px; /* set font size */
+            padding: 3px 5px;
+            margin: 3px; /* set margin (top, right, bottom, left) */
+            border: 3px solid #000000; /* remove border */
+            border-radius: 5px; /* add border radius */
+            cursor: pointer; /* add cursor pointer on hover */
+        }
 
-<h1>Create</h1>
+            .my-button:hover {
+                background-color: #3399FF; /* change background color on hover */
+            }
 
-<h4>SchedulerModel</h4>
+
+    </style>
+</head>
+<h2>Create</h2>
+
+<h6>Create Your Appointment !</h6>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -40,12 +59,15 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index"><button class="my-button" type="submit">Back</button></a>
+
+                @*<button class="btn btn-primary" type="submit">Download</button>*@
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+@*<div>
+    <a asp-action="Index"><button class="my-button" type="submit">Back</button></a>
+</div>*@
 

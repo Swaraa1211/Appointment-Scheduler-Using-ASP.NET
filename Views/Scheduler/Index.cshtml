@@ -4,12 +4,51 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <style>
+.my-button {
+            background-color: #0F52BA; /* set background color */
+  color: #fff; /* set text color */
+  font-size: 16px; /* set font size */
+  padding: 3px 5px; 
+  margin: 3px; /* set margin (top, right, bottom, left) */
+            border: 3px solid #000000; /* remove border */
+  border-radius: 5px; /* add border radius */
+  cursor: pointer; /* add cursor pointer on hover */
+}
+.my-button:hover {
+                background-color: #3399FF; /* change background color on hover */
+}
 
-<h1>Index</h1>
+        .delete-button {
+            background-color: #0F52BA; /* set background color */
+            color: #fff; /* set text color */
+            font-size: 16px; /* set font size */
+            padding: 3px 5px; 
+            margin: 3px; /* set margin (top, right, bottom, left) */
+            border: 3px solid #000000; /* remove border */
+            border-radius: 5px; /* add border radius */
+            cursor: pointer; /* add cursor pointer on hover */
+        }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+            .delete-button:hover {
+                background-color: #990004; /* change background color on hover */
+            }
+            .row-highlight{
+                background-color:aquamarine;
+            }
+    </style>
+</head>
+
+<h2>Index</h2>
+
+
+    @*<a asp-action="Create"><button class="btn btn-primary" type="submit">Create</button></a>*@
+    <div style="overflow: auto;">
+        <a asp-action="Create"><button class="my-button" type="submit">Create</button></a>
+        <a asp-action="Search" style="float: right; margin-right: 10px;"><button class="my-button" type="submit">Search</button></a>
+    </div>
+    
 <table class="table">
     <thead>
         <tr>
@@ -31,36 +70,98 @@
             <th>
                 @Html.DisplayNameFor(model => model.Location)
             </th>
-            <th></th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+            @*var current_date = new DateTime();*@
+            DateTime currentDateTime = DateTime.Now;
+            @*<tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.AppointmentId)
                 </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.AppointmentId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AppointmentId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AppointmentId">Delete</a>
-            </td>
-        </tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AppointmentId"><button class="my-button" type="submit">Edit</button></a>
+                    <a asp-action="Details" asp-route-id="@item.AppointmentId"><button class="my-button" type="submit">Details</button></a>
+                    <a asp-action="Delete" asp-route-id="@item.AppointmentId"><button class="delete-button" type="submit">Delete</button></a>
+                </td>
+            </tr>*@
+            if (currentDateTime > item.EndTime)
+            {
+                <div class="row-highlight">
+                  <tr style="background-color:#D21">
+                        <td>
+                                @Html.DisplayFor(modelItem => item.AppointmentId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>    
+                            @Html.DisplayFor(modelItem => item.StartTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Location)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.AppointmentId"><button class="my-button" type="submit">Edit</button></a>
+                            <a asp-action="Details" asp-route-id="@item.AppointmentId"><button class="my-button" type="submit">Details</button></a>
+                            <a asp-action="Delete" asp-route-id="@item.AppointmentId"><button class="delete-button" type="submit">Delete</button></a>
+                        </td>
+                    </tr>
+                </div>
+
+            }
+            else
+            {
+                <tr style="background-color:#FFF9E3;">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AppointmentId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.AppointmentId"><button class="my-button" type="submit">Edit</button></a>
+                        <a asp-action="Details" asp-route-id="@item.AppointmentId"><button class="my-button" type="submit">Details</button></a>
+                        <a asp-action="Delete" asp-route-id="@item.AppointmentId"><button class="delete-button" type="submit">Delete</button></a>
+                    </td>
+                </tr>
+            }
+
 }
     </tbody>
 </table>
