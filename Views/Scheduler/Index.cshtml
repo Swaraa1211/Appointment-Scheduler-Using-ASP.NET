@@ -105,24 +105,24 @@
             if (currentDateTime > item.EndTime)
             {
                 <div class="row-highlight">
-                  <tr style="background-color:#D21">
+                  <tr style="background-color:mediumvioletred">
                         <td>
-                                @Html.DisplayFor(modelItem => item.AppointmentId)
+                        <b>@Html.DisplayFor(modelItem => item.AppointmentId)</b>
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Title)
+                        <b>@Html.DisplayFor(modelItem => item.Title)</b>
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Description)
-                        </td>
-                        <td>    
-                            @Html.DisplayFor(modelItem => item.StartTime)
+                        <b>@Html.DisplayFor(modelItem => item.Description)</b>
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.EndTime)
+                        <b>@Html.DisplayFor(modelItem => item.StartTime)</b>
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Location)
+                        <b>@Html.DisplayFor(modelItem => item.EndTime)</b>
+                        </td>
+                        <td>
+                        <b>@Html.DisplayFor(modelItem => item.Location)</b>
                         </td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@item.AppointmentId"><button class="my-button" type="submit">Edit</button></a>
@@ -137,22 +137,24 @@
             {
                 <tr style="background-color:#FFF9E3;">
                     <td>
-                        @Html.DisplayFor(modelItem => item.AppointmentId)
+                        <b>@Html.DisplayFor(modelItem => item.AppointmentId)</b>
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Title)
+                        <b>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </b>
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Description)
+                        <b>@Html.DisplayFor(modelItem => item.Description)</b>
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.StartTime)
+                        <b>@Html.DisplayFor(modelItem => item.StartTime)</b>
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.EndTime)
+                        <b>@Html.DisplayFor(modelItem => item.EndTime)</b>
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Location)
+                        <b>@Html.DisplayFor(modelItem => item.Location)</b>
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.AppointmentId"><button class="my-button" type="submit">Edit</button></a>

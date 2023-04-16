@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\VS Code\\AppointmentSchedulerApp\\wwwroot\\images\\41-419243_logo-appointment-scheduling-icon-hd-png-download.png",
+      "PackagePath": "staticwebassets\\images\\41-419243_logo-appointment-scheduling-icon-hd-png-download.png"
+    },
+    {
       "Id": "D:\\VS Code\\AppointmentSchedulerApp\\wwwroot\\images\\istockphoto-1394594963-170667a.jpg",
       "PackagePath": "staticwebassets\\images\\istockphoto-1394594963-170667a.jpg"
     },
