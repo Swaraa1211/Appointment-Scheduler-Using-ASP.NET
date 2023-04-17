@@ -218,13 +218,13 @@ namespace Appointment.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Search(string search)
+        public IActionResult Search(string _search)
         {
             _Connection.Open();
             ShowDiv = true;
             ViewData["ShowDiv"] = ShowDiv;
 
-            string searchQuery = $"SELECT * FROM Appointments WHERE Title LIKE '%{search}%' OR Description LIKE '%{search}%' OR Location LIKE '%{search}%';";
+            string searchQuery = $"SELECT * FROM Appointments WHERE Title LIKE '%{_search}%' OR Description LIKE '%{_search}%' OR Location LIKE '%{_search}%';";
             Console.WriteLine(searchQuery);
             try
             {
