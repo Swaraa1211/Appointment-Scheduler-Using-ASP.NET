@@ -24,7 +24,7 @@
 
     </style>
 </head>
-<h2>Edit</h2>
+@*<h2>Edit</h2>*@
 
 <h6>Edit Your Appointment !</h6>
 <hr />
@@ -59,13 +59,62 @@
                 <span asp-validation-for="Location" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="my-button" /> |
+                <input type="submit" value="Edit" class="my-button" /> |
                 <a asp-action="Index"><button class="my-button" type="submit">Back</button></a>
 
             </div>
         </form>
     </div>
 </div>
+
+
+@*<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AppointmentId" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Edit" class="my-button" /> |
+                <a asp-action="Index"><button class="my-button" type="submit">Back</button></a>
+
+            </div>
+           
+        </form>
+    </div>
+        <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AppointmentId" />
+            <div class="form-group">
+                <label asp-for="StartTime" class="control-label"></label>
+                <input asp-for="StartTime" class="form-control" />
+                <span asp-validation-for="StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndTime" class="control-label"></label>
+                <input asp-for="EndTime" class="form-control" />
+                <span asp-validation-for="EndTime" class="text-danger"></span>
+            </div>
+            
+        </form>
+    </div>
+</div>*@
 
 @*<div>
     <a asp-action="Index"><button class="my-button" type="submit">Back</button></a>

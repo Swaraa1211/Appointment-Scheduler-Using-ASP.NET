@@ -121,6 +121,28 @@ namespace Appointment.Controllers
             _Connection.Close();
 
         }
+        //async Task<bool> InsertAppointment(SchedulerModel scheduler)
+        //{
+        //    _Connection.Open();
+        //    SqlCommand cmd = new SqlCommand("ADD_APPOINTMENT", _Connection);
+        //    cmd.CommandType = CommandType.StoredProcedure;
+
+        //    cmd.Parameters.AddWithValue("@Title", scheduler.Title);
+        //    cmd.Parameters.AddWithValue("@Description", scheduler.Description);
+        //    cmd.Parameters.AddWithValue("@StartTime", scheduler.StartTime);
+        //    cmd.Parameters.AddWithValue("@EndTime", scheduler.EndTime);
+        //    cmd.Parameters.AddWithValue("@Location", scheduler.Location);
+
+        //    int result = cmd.ExecuteNonQuery();
+        //    if (result > 0)
+        //    {
+        //        return true;
+        //    }
+
+
+        //    _Connection.Close();
+        //    return false;
+        //}
 
         // GET: SchedulerController/Create
         public ActionResult Create()
@@ -142,6 +164,57 @@ namespace Appointment.Controllers
             {
                 return View();
             }
+            //Console.WriteLine(scheduler.Description);
+            //try
+            //{
+            //    _Connection.Open();
+            //    //SqlCommand cmd = new SqlCommand("ADD_APPOINTMENT", _Connection);
+            //    //SqlCommand cmd = new SqlCommand("ADD_APPOINTMENT", _Connection);
+            //    //cmd.CommandType = CommandType.StoredProcedure;
+
+            //    //cmd.Parameters.AddWithValue("@Title", scheduler.Title);
+            //    //cmd.Parameters.AddWithValue("@Description", scheduler.Description);
+            //    //cmd.Parameters.AddWithValue("@StartTime", scheduler.StartTime);
+            //    //cmd.Parameters.AddWithValue("@EndTime", scheduler.EndTime);
+            //    //cmd.Parameters.AddWithValue("@Location", scheduler.Location);
+            //    //cmd.Parameters.AddWithValue("@Location", scheduler.Location);
+
+            //    SqlCommand cmd = new SqlCommand("INSERT INTO Appointments (Title, Description, StartTime, EndTime, Location,Email) " +
+            //                      "VALUES (@Title, @Description, @StartTime, @EndTime, @Location, @Email)", _Connection);
+
+            //    cmd.Parameters.AddWithValue("@Title", scheduler.Title);
+            //    cmd.Parameters.AddWithValue("@Description", scheduler.Description);
+            //    cmd.Parameters.AddWithValue("@StartTime", scheduler.StartTime);
+            //    cmd.Parameters.AddWithValue("@EndTime", scheduler.EndTime);
+            //    cmd.Parameters.AddWithValue("@Location", scheduler.Location);
+            //    cmd.Parameters.AddWithValue("@Email","swaroopa@gmail.com");
+
+            //    int result = cmd.ExecuteNonQuery();
+            //    if (result > 0)
+            //    {
+            //        return View(Index);
+            //    }
+            //    _Connection.Close();
+
+            //    return BadRequest();
+            //}
+            //catch (SqlException ex)
+            //{
+            //    ViewBag.ErrorMessage = "An error occurred while creating the appointment.";
+            //    return View();
+            //}
+            //try
+            //{
+            //    //bool value = await InsertAppointment(scheduler);
+
+            //    return RedirectToAction(nameof(Index));
+            //}
+            //catch (Exception ex)
+            //{
+            //    // Log the error or show a meaningful error message to the user
+            //    ViewBag.ErrorMessage = "An error occurred while creating the appointment.";
+            //    return View();
+            //}
         }
 
         // GET: SchedulerController/Edit/5

@@ -48,7 +48,8 @@
         <a asp-action="Create"><button class="my-button" type="submit">Create</button></a>
         <a asp-action="Search" style="float: right; margin-right: 10px;"><button class="my-button" type="submit">Search</button></a>
     </div>
-    
+ 
+
 <table class="table">
     <thead>
         <tr>
@@ -73,8 +74,8 @@
             <th>Action</th>
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
+<tbody>
+    @foreach (var item in Model) {
             @*var current_date = new DateTime();*@
             DateTime currentDateTime = DateTime.Now;
             @*<tr>
@@ -104,7 +105,7 @@
             </tr>*@
             if (currentDateTime > item.EndTime)
             {
-                <div class="row-highlight">
+                @*<div class="row-highlight">*@
                   <tr style="background-color:mediumvioletred">
                         <td>
                         <b>@Html.DisplayFor(modelItem => item.AppointmentId)</b>
@@ -130,7 +131,7 @@
                             <a asp-action="Delete" asp-route-id="@item.AppointmentId"><button class="delete-button" type="submit">Delete</button></a>
                         </td>
                     </tr>
-                </div>
+                @*</div>*@
 
             }
             else
